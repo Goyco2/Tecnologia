@@ -8,9 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class MacchinaComponent implements OnInit {
   @Input() name: string; // <-- Aggiungi la notazione @input
-
-  constructor() {
-     // Rimuovi l'impostazione del nome
+  componenti: string[]; //Creiamo il nostro vettore di stringhe 
+  constructor() { 
+     this.componenti = ['tubo di scarico', 'filtri','bullone', 'viti'];
   }
 
   ngOnInit() {}
