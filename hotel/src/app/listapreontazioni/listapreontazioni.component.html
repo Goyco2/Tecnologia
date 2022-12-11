@@ -1,0 +1,11 @@
+<p>Work!</p>
+<div *ngFor="let b of ListaPreno">
+    {{b.from}}<br>
+    {{b.to}}<br>
+    {{b.name}}<br>
+    {{b.surname}}<br>
+
+    <button (click)="MostraDett(b.room)">Mostra detagli stanza</button>
+    <hr>
+  </div>
+
