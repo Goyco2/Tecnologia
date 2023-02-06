@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 
+
 //Dichiaro che il servizio è iniettabile agli altri componenti a partire dal componente root
 @Injectable({
   providedIn: 'root'  
@@ -24,10 +25,7 @@ export class SpotifyService {
   }
   getTrack(id : String) {
     const url = `https://api.spotify.com/v1/tracks/${id}`;
-    const headers = new HttpHeaders({
-      Authorization:
-        'Bearer BQDKwPIv37cWwVh1n1GjaemwAlBrogxUgqp0ZWqaFisxEpPDVD1dxHaVMdv_NH_9THQxRZrYJiApiD590jSIioAjt6PQgATAg3Gg1aNXDl2SJKICuBdFPrx4FwNFKYueqEfEEsXJVw3FQ2cvNZJyqkvHybyTi_Gs3UhFmsYypz_FHHUO9HP83sktH-yoidDdle-K'
-    });
+    const headers = new HttpHeaders({Authorization: environment.oauthToken});
     
     return this.http.get(url, { headers });
   }
