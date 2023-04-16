@@ -1,1 +1,8 @@
-<p>caratteristiche works!</p>
+<div class = "container-fluid">
+    <div *ngFor = "let p of Player">
+        <h1>{{ p.first_name }}</h1>
+        <p> <img width = "75" src="{{ p.image_url }}"> </p>
+        <br> <br>
+        <p><a href (click)="back()">Back</a></p>
+    </div>
+</div>

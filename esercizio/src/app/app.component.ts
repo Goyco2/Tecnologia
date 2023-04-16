@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PLayersService } from './Gioca.service';
+import { PlayersService } from './Gioca.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +9,10 @@ import { PLayersService } from './Gioca.service';
 })
 export class AppComponent {
   title = 'esercizio';
-  obsGioca!: Observable<Object>;
+  obsPlayer!: Observable<Object>;
 
-  constructor(public beerService: PLayersService) { 
-    this. obsGioca = beerService.searchBeer("punk");
-    this.obsGioca.subscribe((data) => console.log(data));
+  constructor(public PlayersService: PlayersService) { 
+    this. obsPlayer = PlayersService.searchPlayer("Zach");
+    this.obsPlayer.subscribe((data) => console.log(data));
   }
 }

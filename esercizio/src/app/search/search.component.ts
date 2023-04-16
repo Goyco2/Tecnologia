@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PLayersService } from '../Gioca.service';
+import { PlayersService } from '../Gioca.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,16 +10,16 @@ import { Observable } from 'rxjs';
 export class SearchComponent {
   query!: string;
   results: any;
-  obsBeer!: Observable<Object>;
-  constructor(public beerService: PLayersService) {}
+  obsPlayer!: Observable<Object>;
+  constructor(public PlayersService: PlayersService) {}
 
   submit(query:HTMLInputElement): void {
     if (!query.value) {
       return;
     }
     this.query = query.value;
-    this.obsBeer = this.beerService.searchBeer(this.query);
-    this.obsBeer.subscribe((data) => this.results = data); 
+    this.obsPlayer = this.PlayersService.searchPlayer(this.query);
+    this.obsPlayer.subscribe((data) => this.results = data); 
   }
 
 }

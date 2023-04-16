@@ -4,15 +4,20 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PLayersService {
+export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  searchBeer(query: string) {
-    const url = `https://www.balldontlie.io/api/v1/players?players_name=${query}`;
+  searchPlayer(query: string) {
+    const url = `https://www.balldontlie.io/api/v1/players?first_name=${query}`;
 
-    let obsGioca = this.http.get(url);
-    return obsGioca;
+    let obsPlayer = this.http.get(url);
+    return obsPlayer;
 
+  }
+  getPlayer(id: string) {
+    const url = `https://www.balldontlie.io/api/v1/players/${id}`;
+
+    return this.http.get(url);
   }
 }
