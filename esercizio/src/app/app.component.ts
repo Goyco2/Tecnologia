@@ -12,7 +12,7 @@ export class AppComponent {
   obsPlayer!: Observable<Object>;
 
   constructor(public PlayersService: PlayersService) { 
-    this. obsPlayer = PlayersService.searchPlayer("Zach");
+    this. obsPlayer = PlayersService.searchPlayer("");
     this.obsPlayer.subscribe((data) => console.log(data));
   }
 }

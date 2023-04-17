@@ -5,7 +5,7 @@
     <button (click)="submit(newquery)" class = "btn btn-primary">Search</button>
 </div>
 
-<div *ngFor = "let p of results">
-    {{p.first_name}}
+<div *ngFor = "let p of results.data">
+    {{p.first_name}} {{p.last_name}}
     <hr>
 </div>
