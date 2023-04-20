@@ -7,6 +7,7 @@
   [title]="title"
   [options] = "markerOptions">
 </map-marker>
+
 <map-polygon [paths]="vertices">
 </map-polygon>
 
@@ -15,4 +16,11 @@
               [radius]="50"
               [options] = 'circleOptions'>
   </map-circle>
+  <map-circle [center]="position"
+              [radius]="30"
+              [options] = 'circleOptions'>
+  </map-circle>
+  <button name="Blue" (click)="cambiaColreB()">BLUE</button>
+  <button name="Green" (click)="cambiaColreG()">GREEN</button>
+  <button name="Red" (click)="cambiaColreR()">RED</button>
 </google-map>

@@ -11,7 +11,7 @@ export class AppComponent {
   center : any;
   position : any;
   label :string;
-  circleOptions: { fillColor: string; };
+  circleOptions: any;
   markerOptions: { icon: google.maps.Icon; };
   vertices: { lat: any; lng: any; }[];
   
@@ -21,8 +21,7 @@ export class AppComponent {
       url:'./assets/img/cat_acrobat.ico',
       scaledSize : new google.maps.Size(60,60)
     }
-    this.markerOptions = {icon:iconData}
-
+    this.markerOptions = {icon:iconData};
     this.circleOptions = {fillColor : 'red'};
     this.center={lat: 45.506738, lng: 9.190766};
     this.position = this.center;
@@ -32,8 +31,17 @@ export class AppComponent {
       {  lat: this.center.lat, lng: this.center.lng },
       {  lat: this.center.lat - 0.001, lng: this.center.lng - 0.002}
     ];   
-    
+  }
+    cambiaColreB() {
+      this.circleOptions = {fillColor : 'blue'}
+    }
+    cambiaColreG() {
+      this.circleOptions = {fillColor : 'green'}
+    }
+    cambiaColreR() {
+      this.circleOptions = {fillColor : 'red'}
+    }
+
   }
 
-}
 
