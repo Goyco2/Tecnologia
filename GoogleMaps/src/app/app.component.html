@@ -6,11 +6,17 @@
   [label]="label" 
   [title]="title"
   [options] = "markerOptions">
-</map-marker>
+  </map-marker>
 
-<map-polygon [paths]="vertices">
-</map-polygon>
+  <map-marker [position]="position2" 
+  [title]="title"
+  [options] = "markerOptions2">
+  </map-marker>
 
+  <map-marker [position]="position3" 
+  [title]="title"
+  [options] = "markerOptions3">
+  </map-marker>
 
   <map-circle [center]="position"
               [radius]="50"
@@ -20,7 +26,12 @@
               [radius]="30"
               [options] = 'circleOptions'>
   </map-circle>
-  <button name="Blue" (click)="cambiaColreB()">BLUE</button>
-  <button name="Green" (click)="cambiaColreG()">GREEN</button>
-  <button name="Red" (click)="cambiaColreR()">RED</button>
+
+
+  <map-polygon [paths]="vertices">
+  </map-polygon>
 </google-map>
+
+<button (click)="cambiaColoreRosso()" > Rosso </button>
+<button (click)="cambiaColoreBlu()" > Blu </button>
+<button (click)="cambiaColoreGiallo()" > Giallo </button>
