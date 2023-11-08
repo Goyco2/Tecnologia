@@ -1,0 +1,22 @@
+<p>listatype works!</p>
+<!-- {{dati | json}} -->
+
+
+
+<!-- <ul *ngFor="let data of dati.results">
+    <li>
+      <a [href]="data.url"><strong>{{data.name}}</strong></a>
+    </li>
+</ul> -->
+
+<!-- <ul>
+    <li *ngFor="let data of dati.results">
+      <a [routerLink]="['/pokemon']"><strong>{{data.name}}</strong></a>
+    </li>
+</ul> -->
+
+<ul>
+    <li *ngFor="let data of dati.results">
+      <a [routerLink]="['/pokemon', data.url.split('/')[6]]"><strong>{{data.name}}</strong></a>
+    </li>
+  </ul>
